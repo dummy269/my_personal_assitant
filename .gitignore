@@ -34,7 +34,7 @@ wheels/
 *~
 .DS_Store
 
-# Environment
+# Environment (keep .env.template, ignore .env)
 .env
 .env.local
 .env.*.local
@@ -47,7 +47,9 @@ htmlcov/
 # Logs
 *.log
 
-# Project-specific
-data/documents/
+# Data (personal documents - don't track)
+data/
+
+# Cache
 .cache/
 *.ipynb_checkpoints/
