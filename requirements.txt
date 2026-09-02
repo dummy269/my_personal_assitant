@@ -1,3 +1,3 @@
-# V0 — Environment
-# No packages needed yet.
-# Packages will be added in V1 and beyond as we introduce new concepts.
+# V1 — PDF Reader
+# PDF reading library
+pypdf==6.16.2

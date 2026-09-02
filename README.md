@@ -60,6 +60,21 @@ personal-ai/
 
 4. Create `.env` file with your settings (see `.env.template` if available)
 
+## Running the Project
+
+**V1 — PDF Reader:**
+
+```bash
+# Demo: Process all PDFs in data/documents/
+python main.py
+
+# Learning guide: Understand how PDF reading works
+python learn_v1.py
+
+# Advanced: Use the module directly
+python -c "from src.pdf_reader import inspect_pdf; inspect_pdf('data/documents/your_pdf.pdf')"
+```
+
 ## Development
 
 All Python code should be run inside the virtual environment.
