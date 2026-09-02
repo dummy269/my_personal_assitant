@@ -1,58 +1,26 @@
-"""
-V1 Demo — PDF Reader
-
-This script shows how to use the PDF reader module.
-
-It demonstrates:
-1. Loading a PDF file
-2. Extracting metadata
-3. Extracting text from pages
-4. Handling errors
-"""
-
 from pathlib import Path
-from src.pdf_reader import inspect_pdf
+from src.pdf_reader import load_pdf, extract_text_from_pdf
 
 
-def main():
-    """
-    Main demo function.
-    Looks for PDFs in data/documents/ and processes them.
-    """
-    print("\n" + "=" * 60)
-    print("V1 — PDF Reader Demo")
-    print("=" * 60)
+def process_pdfs():
+    docs_dir = Path("data/documents")
+    pdfs = list(docs_dir.glob("*.pdf"))
     
-    documents_dir = Path("data/documents")
-    
-    # Check if documents directory exists
-    if not documents_dir.exists():
-        print(f"❌ Directory not found: {documents_dir}")
+    if not pdfs:
+        print("No PDFs found in data/documents/")
         return
     
-    # Find all PDF files
-    pdf_files = list(documents_dir.glob("*.pdf"))
+    print(f"\nFound {len(pdfs)} PDF(s)\n")
     
-    if not pdf_files:
-        print(f"\n⚠️  No PDF files found in {documents_dir}/")
-        print("\nTo test this script:")
-        print("1. Download or create a PDF file")
-        print("2. Place it in: data/documents/")
-        print("3. Run this script again: python main.py")
-        return
-    
-    # Process each PDF
-    print(f"\n📂 Found {len(pdf_files)} PDF file(s) in data/documents/:\n")
-    
-    for i, pdf_file in enumerate(pdf_files, 1):
-        print(f"{i}. {pdf_file.name}")
-    
-    print()
-    
-    # Process each file
-    for pdf_file in pdf_files:
-        inspect_pdf(str(pdf_file))
+    for pdf_file in pdfs:
+        try:
+            pdf = load_pdf(str(pdf_file))
+            result = extract_text_from_pdf(pdf)
+            print(f"✓ {pdf_file.name}")
+            print(f"  Pages: {result['num_pages']}, Characters: {len(result['full_text'])}\n")
+        except Exception as e:
+            print(f"✗ {pdf_file.name}: {e}\n")
 
 
 if __name__ == "__main__":
-    main()
+    process_pdfs()

@@ -65,14 +65,11 @@ personal-ai/
 **V1 — PDF Reader:**
 
 ```bash
-# Demo: Process all PDFs in data/documents/
+# Process all PDFs
 python main.py
 
-# Learning guide: Understand how PDF reading works
+# Simple example
 python learn_v1.py
-
-# Advanced: Use the module directly
-python -c "from src.pdf_reader import inspect_pdf; inspect_pdf('data/documents/your_pdf.pdf')"
 ```
 
 ## Development
