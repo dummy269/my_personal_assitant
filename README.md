@@ -17,7 +17,7 @@ This project is built incrementally with versions (V0, V1, V2, ..., V10).
 
 Each version introduces one concept at a time. No skipping ahead.
 
-**Current Version:** V5 (LangGraph)
+**Current Version:** V6 (Memory)
 
 ## Project Structure
 
@@ -101,6 +101,14 @@ python agent_demo.py "What is 25 * 4?"
 python main.py "What is 25 * 4?"
 python main.py "What technologies have I used?"
 ```
+
+**V6 — Conversation memory:**
+
+```bash
+python main.py
+```
+
+Ask more than one question in the same run. Earlier messages remain in the graph state.
 
 ## Development
 

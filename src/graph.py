@@ -24,7 +24,7 @@ def agent_node(state: AgentState) -> dict:
         messages=state["messages"],
         tools=TOOLS,
     )
-    return {"messages": [response.choices[0].message.model_dump()]}
+    return {"messages": state["messages"] + [response.choices[0].message.model_dump()]}
 
 
 def tool_node(state: AgentState) -> dict:
@@ -45,7 +45,7 @@ def tool_node(state: AgentState) -> dict:
             }
         )
 
-    return {"messages": tool_messages}
+    return {"messages": state["messages"] + tool_messages}
 
 
 def route_after_agent(state: AgentState) -> str:
