@@ -5,3 +5,7 @@ pypdf==6.16.2
 # V2 — Basic RAG
 # Local vector database and embedding function
 chromadb==1.5.9
+
+# V3 — RAG Chatbot
+openai==3.7.0
+python-dotenv==1.2.1

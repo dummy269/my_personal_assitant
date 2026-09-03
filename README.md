@@ -17,7 +17,7 @@ This project is built incrementally with versions (V0, V1, V2, ..., V10).
 
 Each version introduces one concept at a time. No skipping ahead.
 
-**Current Version:** V2 (Basic RAG)
+**Current Version:** V3 (RAG Chatbot)
 
 ## Project Structure
 
@@ -80,6 +80,12 @@ python rag_demo.py
 
 # Ask a different question
 python rag_demo.py "What projects have I worked on?"
+```
+
+**V3 — RAG Chatbot:**
+
+```bash
+python chatbot_demo.py "What technologies have I used?"
 ```
 
 ## Development
