@@ -17,7 +17,7 @@ This project is built incrementally with versions (V0, V1, V2, ..., V10).
 
 Each version introduces one concept at a time. No skipping ahead.
 
-**Current Version:** V6 (Memory)
+**Current Version:** V7 (Persistence)
 
 ## Project Structure
 
@@ -109,6 +109,14 @@ python main.py
 ```
 
 Ask more than one question in the same run. Earlier messages remain in the graph state.
+
+**V7 — Persistence:**
+
+```bash
+python main.py
+```
+
+Conversation checkpoints are stored in `data/checkpoints.sqlite`. The `personal-ai` thread ID lets later runs continue the same conversation.
 
 ## Development
 
