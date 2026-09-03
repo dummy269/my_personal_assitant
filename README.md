@@ -17,7 +17,7 @@ This project is built incrementally with versions (V0, V1, V2, ..., V10).
 
 Each version introduces one concept at a time. No skipping ahead.
 
-**Current Version:** V7 (Persistence)
+**Current Version:** V8 (Advanced Agent)
 
 ## Project Structure
 
@@ -117,6 +117,14 @@ python main.py
 ```
 
 Conversation checkpoints are stored in `data/checkpoints.sqlite`. The `personal-ai` thread ID lets later runs continue the same conversation.
+
+**V8 — Advanced Agent:**
+
+```bash
+python main.py "When did my B.Tech end?"
+```
+
+The workflow uses planner, researcher, verifier, and final-answer nodes.
 
 ## Development
 
