@@ -16,3 +16,7 @@ python-dotenv==1.2.1
 # V5 — LangGraph
 langgraph==1.2.11
 langgraph-checkpoint-sqlite==3.1.1
+
+# V10 - API and UI
+fastapi==0.135.1
+uvicorn==0.42.0

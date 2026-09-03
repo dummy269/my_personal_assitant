@@ -17,7 +17,7 @@ This project is built incrementally with versions (V0, V1, V2, ..., V10).
 
 Each version introduces one concept at a time. No skipping ahead.
 
-**Current Version:** V9 (Evaluation)
+**Current Version:** V10 (Production)
 
 ## Project Structure
 
@@ -133,6 +133,22 @@ python evaluate.py
 ```
 
 The evaluation dataset checks retrieval using expected terms and reports `recall@3` and `precision@3`.
+
+**V10 - API and UI:**
+
+```bash
+pip install -r requirements.txt
+uvicorn app:app --reload
+```
+
+Open `http://127.0.0.1:8000` in a browser. API clients can use `POST /ask` with `{"question": "What technologies have I used?"}`. Add `OPENAI_API_KEY` to `.env` before asking questions.
+
+Run with Docker (personal documents are mounted at runtime):
+
+```bash
+docker build -t personal-ai .
+docker run --rm -p 8000:8000 --env-file .env -v "$PWD/data:/app/data" personal-ai
+```
 
 ## Development
 
