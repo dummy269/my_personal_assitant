@@ -1,3 +1,7 @@
 # V1 — PDF Reader
 # PDF reading library
 pypdf==6.16.2
+
+# V2 — Basic RAG
+# Local vector database and embedding function
+chromadb==1.5.9

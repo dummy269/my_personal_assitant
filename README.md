@@ -17,7 +17,7 @@ This project is built incrementally with versions (V0, V1, V2, ..., V10).
 
 Each version introduces one concept at a time. No skipping ahead.
 
-**Current Version:** V0 (Environment Setup)
+**Current Version:** V2 (Basic RAG)
 
 ## Project Structure
 
@@ -70,6 +70,16 @@ python main.py
 
 # Simple example
 python learn_v1.py
+```
+
+**V2 — Basic RAG:**
+
+```bash
+# Index PDFs and retrieve relevant chunks
+python rag_demo.py
+
+# Ask a different question
+python rag_demo.py "What projects have I worked on?"
 ```
 
 ## Development
