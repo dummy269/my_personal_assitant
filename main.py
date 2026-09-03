@@ -1,26 +1,22 @@
+import sys
 from pathlib import Path
-from src.pdf_reader import load_pdf, extract_text_from_pdf
+
+from src.basic_rag import add_pdf_to_collection, create_collection
+from src.graph import build_graph
 
 
-def process_pdfs():
-    docs_dir = Path("data/documents")
-    pdfs = list(docs_dir.glob("*.pdf"))
-    
-    if not pdfs:
-        print("No PDFs found in data/documents/")
-        return
-    
-    print(f"\nFound {len(pdfs)} PDF(s)\n")
-    
-    for pdf_file in pdfs:
-        try:
-            pdf = load_pdf(str(pdf_file))
-            result = extract_text_from_pdf(pdf)
-            print(f"✓ {pdf_file.name}")
-            print(f"  Pages: {result['num_pages']}, Characters: {len(result['full_text'])}\n")
-        except Exception as e:
-            print(f"✗ {pdf_file.name}: {e}\n")
+def main():
+    collection = create_collection()
+    for pdf in Path("data/documents").glob("*.pdf"):
+        add_pdf_to_collection(collection, str(pdf))
+
+    question = " ".join(sys.argv[1:]) or "What technologies have I used?"
+    result = build_graph().invoke({
+        "messages": [{"role": "user", "content": question}],
+        "collection": collection,
+    })
+    print(result["messages"][-1]["content"])
 
 
 if __name__ == "__main__":
-    process_pdfs()
+    main()

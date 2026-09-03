@@ -17,7 +17,7 @@ This project is built incrementally with versions (V0, V1, V2, ..., V10).
 
 Each version introduces one concept at a time. No skipping ahead.
 
-**Current Version:** V3 (RAG Chatbot)
+**Current Version:** V5 (LangGraph)
 
 ## Project Structure
 
@@ -93,6 +93,13 @@ python chatbot_demo.py "What technologies have I used?"
 ```bash
 python agent_demo.py "What technologies have I used?"
 python agent_demo.py "What is 25 * 4?"
+```
+
+**V5 — LangGraph:**
+
+```bash
+python main.py "What is 25 * 4?"
+python main.py "What technologies have I used?"
 ```
 
 ## Development
