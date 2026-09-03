@@ -17,7 +17,7 @@ This project is built incrementally with versions (V0, V1, V2, ..., V10).
 
 Each version introduces one concept at a time. No skipping ahead.
 
-**Current Version:** V8 (Advanced Agent)
+**Current Version:** V9 (Evaluation)
 
 ## Project Structure
 
@@ -125,6 +125,14 @@ python main.py "When did my B.Tech end?"
 ```
 
 The workflow uses planner, researcher, verifier, and final-answer nodes.
+
+**V9 — Evaluation:**
+
+```bash
+python evaluate.py
+```
+
+The evaluation dataset checks retrieval using expected terms and reports `recall@3` and `precision@3`.
 
 ## Development
 
