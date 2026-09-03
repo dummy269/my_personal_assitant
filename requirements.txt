@@ -9,3 +9,6 @@ chromadb==1.5.9
 # V3 — RAG Chatbot
 openai==3.7.0
 python-dotenv==1.2.1
+
+# V4 — Agent tools
+# No additional packages; uses the V3 OpenAI client

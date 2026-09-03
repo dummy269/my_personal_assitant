@@ -88,6 +88,13 @@ python rag_demo.py "What projects have I worked on?"
 python chatbot_demo.py "What technologies have I used?"
 ```
 
+**V4 — Agent:**
+
+```bash
+python agent_demo.py "What technologies have I used?"
+python agent_demo.py "What is 25 * 4?"
+```
+
 ## Development
 
 All Python code should be run inside the virtual environment.
